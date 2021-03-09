@@ -12,9 +12,15 @@ router.use('/api', createProxyMiddleware({
     changeOrigin: true
 }))
 
-
 router.get('/', (req, res) => {
     res.render('index', {message: "Hello from Handlebars!"});
+})
+
+// other routes you might use
+
+router.use((req, res) => {
+    res.status(404);
+    res.render('error', { layout: 'errorlayout.hbs', errormessage: `You've lost your way!`})
 })
 
 module.exports = router;
