@@ -1,0 +1,11 @@
+.movie-thumb {
+    width: 150px;
+    margin: 0.5rem;
+}
+
+.allMovies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 50%;
+}
