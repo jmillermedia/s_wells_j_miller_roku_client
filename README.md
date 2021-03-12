@@ -1,5 +1,5 @@
 
-![header image](https://github.com/jmillermedia/s_wells_j_miller_RokuFlashback/blob/main/images/readmeBanner.jpg "Roku Flashback")
+![header image](public/images/readmeBanner.jpg "Roku Flashback")
 
 # Selena Wells & Jonathan Miller -  Roku Flashback Project
  Roku Flashback Project - Multimedia Authoring: Term 3
@@ -23,18 +23,15 @@ A media streaming app to watch and listen to music, movies and tv shows from the
 
 This is a work in progress. If you would like to checkout where we are going and what is to come, see our designs and developement roadmap.
 
-
-## Assignment Requirements:
-
 ## Additional Resources:
 
 [Project Assets](https://drive.google.com/file/d/1rwfUNexPK1xJMO3fY4dt3ghRJDdiliwT/view?usp=sharing 'Google Drive')
 
-
-
 ## Installation:
 
-No particular installation required. Download repo and open in a code editor. Content will require a Live Server to view properly (MAMP/WAMP/Docker). Database will need to be loaded into local phpMyAdmin.
+Run "npm install" in the bash window of your choosing to download node dependencies. Download repo and open in a code editor. Content will require a Live Server to view properly (MAMP/WAMP/Docker). Database will need to be loaded into local phpMyAdmin.
+
+Pull down both repos and use "npm run startdev" on both the server and client repos. Navigate to localhost:5050 to view the content.
 
 
 ## MIT License:
