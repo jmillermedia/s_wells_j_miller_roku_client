@@ -4,6 +4,10 @@
 # Selena Wells & Jonathan Miller -  Roku Flashback Project
  Roku Flashback Project - Multimedia Authoring: Term 3
 
+ [Client Repo](https://github.com/jmillermedia/s_wells_j_miller_roku_client 'GitHub')
+
+ [Server Repo](https://github.com/jmillermedia/s_wells_j_miller_RokuFlashback 'GitHub')
+
 #### Designer - Selena Wells
 
 [Design Doc](https://docs.google.com/document/d/1cLjANI-l3je6Z7Grm-uryeLQoabeqExUvBV67tDGdPw/edit?usp=sharing 'Google Docs')
@@ -23,6 +27,9 @@ This is a work in progress. If you would like to checkout where we are going and
 ## Assignment Requirements:
 
 ## Additional Resources:
+
+[Project Assets](https://drive.google.com/file/d/1rwfUNexPK1xJMO3fY4dt3ghRJDdiliwT/view?usp=sharing 'Google Drive')
+
 
 
 ## Installation:
