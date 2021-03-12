@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main id="app">
+        <h2 class="hidden">routers and guards</h2>
+        <h3>client-side routing with Vue</h3>
+
+        <router-link to="/">Home</router-link>
+        <router-link to="/protected">Profile</router-link>
+
+        <section>
+            <h2>{{ message }}</h2>
+        </section>
+
+        <router-view></router-view>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3.5.1/dist/vue-router.js"></script>
+
+    <script defer type="module" src="public/scripts/main.js"></script>
+</body>
+</html>
