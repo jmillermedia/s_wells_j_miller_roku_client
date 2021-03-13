@@ -7,14 +7,23 @@
     align-self: center;
     align-items: center;
     width: 100%;
-    #header {
-        background-color: $accent-blue;
-        display: flex;
+}
+
+#header {
+    @include dark-blue-gradient;
+    box-sizing: border-box;
+    font-family: $main-font;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+    height: 90px;
+    .mainLogo img {
+        max-width: 140px;
         width: 100%;
-        margin: 0 auto;
-        align-items: center;
-        justify-content: center;
-        height: 90px;
+        height: 100%;
     }
 }
 
