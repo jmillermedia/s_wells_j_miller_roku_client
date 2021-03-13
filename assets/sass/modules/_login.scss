@@ -12,7 +12,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 100px;
+    margin: 2rem;
+    .mediaOption {
+        padding: 0 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .optionTitle {
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+    }
 }
 
 .bigTitle {

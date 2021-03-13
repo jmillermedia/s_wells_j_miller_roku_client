@@ -4,7 +4,7 @@ export default {
     template: `
     <footer id="footer">
     <div class="footer-group-wrap">
-        <div class="mainLogo">LOGO GOES HERE</div>
+        <div class="mainLogo"><img src='/images/mainLogo.png'></div>
         <div class="footerSocials">INSERT SOCIALS HERE</div>
     </div>
     <nav id="bottomNav">
