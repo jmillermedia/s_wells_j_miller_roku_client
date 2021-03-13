@@ -1,1 +1,73 @@
-.movie-thumb{width:150px;margin:.5rem}.allMovies{display:flex;flex-direction:row;flex-wrap:wrap;max-width:50%}/*# sourceMappingURL=main.css.map */
+.movie-thumb {
+    width: 150px;
+    margin: .5rem
+}
+
+.allMovies {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 50%
+}
+
+#pageWrapper {
+    background-color: #1e2434;
+    color: #fff;
+    font-family: Montserrat, Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 100%
+}
+
+#pageWrapper #header {
+    background-color: #2f448a;
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    height: 90px
+}
+
+.navItems {
+    display: flex
+}
+
+.navItems a {
+    text-decoration: none;
+    color: #fff;
+    padding: 50px 30px
+}
+
+.heroMenu {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px
+}
+
+.heroMenu .usersSection {
+    display: flex;
+    justify-content: space-around
+}
+
+.mediaMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px
+}
+
+.bigTitle {
+    font-family: Glasoor, Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    align-self: center
+}
+
+.mediaCarousel {
+    display: flex
+}
+
+
+/*# sourceMappingURL=main.css.map */

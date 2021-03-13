@@ -1,1 +1,7 @@
 @import 'modules/_moviethumb.scss';
+// vars and mixins
+@import 'modules/vars.scss';
+@import 'modules/mixins.scss';
+// main modules
+@import 'modules/header';
+@import 'modules/login'

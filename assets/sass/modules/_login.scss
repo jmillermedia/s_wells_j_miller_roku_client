@@ -1,0 +1,26 @@
+.heroMenu {
+    display: flex;
+    flex-direction: column;
+    max-width: 1200px;
+    .usersSection {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.mediaMenu {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.bigTitle {
+    font-family: $title-font;
+    font-size: 60px;
+    align-self: center;
+}
+
+.mediaCarousel {
+    display: flex;
+}

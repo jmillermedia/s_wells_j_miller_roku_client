@@ -1,0 +1,28 @@
+#pageWrapper {
+    background-color: $main-background;
+    color: #ffffff;
+    font-family: $main-font;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    align-items: center;
+    width: 100%;
+    #header {
+        background-color: $accent-blue;
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        height: 90px;
+    }
+}
+
+.navItems {
+    display: flex;
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 50px 30px;
+    }
+}
