@@ -1,0 +1,17 @@
+.heroMenu {
+    padding-top: 50px;
+}
+
+.usersSection {
+    //margin: 2rem;
+    .user {
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .userTitle {
+            padding-top: 2rem;
+            font-size: 30px;
+        }
+    }
+}

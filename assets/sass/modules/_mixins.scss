@@ -1,0 +1,8 @@
+//gradient mixins
+@mixin purple-pink-gradient {
+    background: transparent linear-gradient(180deg, $main-purple 0%, $main-pink 100%) 0% 0% no-repeat padding-box;
+}
+
+@mixin dark-blue-gradient {
+    background: transparent linear-gradient(180deg, $accent-blue 0%, $main-background 100%) 0% 0% no-repeat padding-box;
+}
