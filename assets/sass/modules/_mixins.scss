@@ -6,3 +6,7 @@
 @mixin dark-blue-gradient {
     background: transparent linear-gradient(180deg, $accent-blue 0%, $main-background 100%) 0% 0% no-repeat padding-box;
 }
+
+@mixin dark-blue-gradient-reversed {
+    background: transparent linear-gradient(180deg, $main-background 0%, $accent-blue 100%) 0% 0% no-repeat padding-box;
+}
