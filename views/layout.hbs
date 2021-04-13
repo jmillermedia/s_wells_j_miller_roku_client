@@ -1,33 +1,20 @@
-<!--INDEX.HTML START-->
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <!-- in mobile set zoom level to 100%, set size to equal device width -->
-    <meta name="viewport" content="initial-scale.1.0, width=device-width">
-    <title>Roku Flashback</title>
-    <link rel="shortcut icon" href="/images/favicon.svg" type="image/x-icon">
-    <link rel="stylesheet" type="text/css" href="/css/reset.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/main.css">
-    <!-- Facebook meta details for sharing API -->
-    <meta property="og:url" content="https://www.your-domain.com/your-page.html" />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Your Website Title" />
-    <meta property="og:description" content="Your description" />
-    <meta property="og:image" content="https://www.your-domain.com/path/image.jpg" />
-</head>
+{{> htmlhead}}
+
 <body>
     <main id="app">
-    <!-- this is where handlebars will inject its templates -->
-    {{!-- it's like a php include statement --}}
+
+    {{> header}}
+
     {{{ body }}}
 
-    </main>
-    
-    <script src="https://unpkg.com/vue-router@3.5.1/dist/vue-router.js"></script>
+    {{> footer}}
 
-    <script defer type="module" src="/scripts/main.js"></script>
+    </main>
+
+    {{> scripts}}
+
 </body>
 </html>
