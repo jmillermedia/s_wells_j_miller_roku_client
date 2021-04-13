@@ -1,11 +1,12 @@
-import Vue from 'https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.esm.browser.js';
 import TheMovieThumb from './components/TheMovieThumbnailComponent.js';
 import HomePage from './components/TheHomePageComponent.js';
 import HeaderComponent from './components/HeaderComponent.js';
+import HomeComponent from './components/TheHomeComponent.js';
 
 import FooterComponent from './components/FooterComponent.js';
 import LoginPage from './components/TheLoginComponent.js';
 import Protected from './components/TheProtectedComponent.js';
+import AllUsers from './components/TheAllUsersComponent.js';
 // import e from 'express';
 
 (() => {
@@ -19,21 +20,30 @@ import Protected from './components/TheProtectedComponent.js';
     // add our Vue Router here
     const router = new VueRouter({
         routes: [
-            { path: "/", component: HomePage },
+            { path: "/", name: 'root', component: LoginPage, beforeEnter: (to, from, next) => {
+                //if you're authenticated (set in localstorage), then go to the home page.
+                if (localStorage.getItem('cacheduser')) {
+                    let user = JSON.parse(localStorage.getItem('cacheduser'));
+                } else {
+                    next();
+                }
+            }},
             { path: "/login", component: LoginPage },
+            { path: "/users", name: 'users', component: AllUsers },
+            { path: '/home', name: 'home', component: HomeComponent, props: true }
 
             //only access this route or section if you're logged in /authenticated
-            {
-                path: "/admin",
-                component: Protected,
-                beforeEnter: (to, from, next) => {
-                    if (!vm.authenticated) {
-                        next('/login');
-                    } else {
-                        next();
-                    }
-                }
-            }
+            // {
+            //     path: "/admin",
+            //     component: Protected,
+            //     beforeEnter: (to, from, next) => {
+            //         if (!vm.authenticated) {
+            //             next('/login');
+            //         } else {
+            //             next();
+            //         }
+            //     }
+            // }
         ]
     })
 
@@ -43,7 +53,9 @@ import Protected from './components/TheProtectedComponent.js';
             allMovies: [],
             message: "Hello!",
             authenticated: false,
-            user: ""
+            user: "",
+            isAdmin: false,
+            currentUser: undefined
         },
 
         created: function() {
@@ -62,14 +74,23 @@ import Protected from './components/TheProtectedComponent.js';
         },
 
         methods: {
+            logout() {
+                //remove the cached user from local storage, if it exists
+                if (localStorage.getItem('cacheduser')) {
+                    localStorage.removeItem('cacheduser');
+                }
 
+                // return to log in page
+                this.$router.push({ name: 'root' });
+                this.currentUser = undefined;
+            },
+
+            authenticateuser(user) {
+                // debugger;
+                this.currentUser = user;
+            }
         },
 
-        components: {
-            moviethumb: TheMovieThumb,
-            headerComponent: HeaderComponent,
-            footerComponent: FooterComponent
-        },
 
         router
     }).$mount('#app')
