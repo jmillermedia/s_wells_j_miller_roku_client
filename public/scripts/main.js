@@ -19,15 +19,19 @@ import AllUsers from './components/TheAllUsersComponent.js';
 
     // add our Vue Router here
     const router = new VueRouter({
-        routes: [
-            { path: "/", name: 'root', component: LoginPage, beforeEnter: (to, from, next) => {
-                //if you're authenticated (set in localstorage), then go to the home page.
-                if (localStorage.getItem('cacheduser')) {
-                    let user = JSON.parse(localStorage.getItem('cacheduser'));
-                } else {
-                    next();
+        routes: [{
+                path: "/",
+                name: 'root',
+                component: LoginPage,
+                beforeEnter: (to, from, next) => {
+                    //if you're authenticated (set in localstorage), then go to the home page.
+                    if (localStorage.getItem('cacheduser')) {
+                        let user = JSON.parse(localStorage.getItem('cacheduser'));
+                    } else {
+                        next();
+                    }
                 }
-            }},
+            },
             { path: "/login", component: LoginPage },
             { path: "/users", name: 'users', component: AllUsers },
             { path: '/home', name: 'home', component: HomeComponent, props: true }
@@ -90,8 +94,9 @@ import AllUsers from './components/TheAllUsersComponent.js';
                 this.currentUser = user;
             }
         },
-
-
+        components: {
+            'footer-component': FooterComponent
+        },
         router
     }).$mount('#app')
 })();

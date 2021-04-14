@@ -9,8 +9,29 @@
     justify-content: space-between;
     padding: 1vw;
     height: 90px;
+    // position: absolute;
+    // bottom: 0;
     .mainLogo img {
         width: 130px;
         height: auto;
     }
+    li {
+        list-style: none
+    }
+}
+
+.backToTop {
+    @include purple-pink-gradient;
+    padding: 20px;
+    height: 90px;
+    border: none;
+    cursor: pointer;
+    a {
+        color: white;
+        text-decoration: none!important;
+    }
+}
+
+.copywrite {
+    font-size: 16px;
 }

@@ -5,7 +5,7 @@ export default {
     <footer id="footer">
     <div class="footer-group-wrap">
         <div class="mainLogo"><img src='/images/mainLogo.png'></div>
-        <div class="footerSocials">INSERT SOCIALS HERE</div>
+        
     </div>
     <nav id="bottomNav">
         <ul class="navItems">
@@ -16,10 +16,11 @@ export default {
     </nav>
     <div>
         <h2 class="copywrite">© Roku Flashback 2020</h2>
-        <button class="backToTop">
-            <a href="#">Back to Top</a>
-        </button>
+       
     </div>
+    <button class="backToTop">
+            <a href="#"><i class="fas fa-angle-double-up"></i></a>
+        </button>
     </footer>
     `
 }
