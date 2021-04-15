@@ -4,14 +4,15 @@ export default {
     props: ['liveuser'],
 
     template: `
-    <section class="col-xs-12 col-sm-6 col-md-4 mx-auto">
-        <div class="card rounded" @click="navToHome">
+    
+        <div class="user" @click="navToHome">
             <div class="card-body text-center">
                 <img :src="'images/' + liveuser.user_avatar" class="rounded-circle img-fluid">
-                <p>{{ liveuser.user_name }}</p>
+               
             </div>
+            <p class="userTitle">{{ liveuser.user_name }}</p>
         </div>
-    </section>`,
+    `,
 
     created: function() {
         // check if there's an avatar, if not, set it to a temporaty one.

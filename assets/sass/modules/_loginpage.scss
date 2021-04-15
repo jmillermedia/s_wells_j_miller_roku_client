@@ -9,7 +9,7 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 50px;
-    height: 50vh;
+    height: calc(100vh - 180px);
     border-radius: 100px;
     .text {
         max-width: 60%;

@@ -1,25 +1,56 @@
+import MediaOptionsComponent from './MediaOptionsComponent.js';
+import MediaCarouselComponent from './MediaCarouselComponent.js';
+
 export default {
     name: "TheHomeComponent",
 
     props: ['currentuser'],
 
+    components: {
+
+        mediaOptionsComponent: MediaOptionsComponent,
+        mediaCarouselComponent: MediaCarouselComponent
+    },
+
     template: `
-    <div class="container">
-        <div class="row">
-            <div class="col-12 order-2 order-md-1 col-md-3 media-container">
+     <div id="pageWrapper">
+        <div class=" mediaPreview">
+            <div class=" media-container info-Wrap">
                 <h4 class="media-title">{{currentMediaDetails.movies_title}}</h4>
                 <p class="media-details" v-html="currentMediaDetails.movies_storyline"></p>
                 <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
                 <span class="media-year">Released in {{currentMediaDetails.movies_year}}</span>
             </div>
 
-            <div class="col-12 order-1 order-md-2 col-md-9 media-container">
+            
                 <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="fs-video"></video>
-            </div>
+            
         </div>
+        
+        <media-options-component></media-options-component>
+        <ul class="media-genres">
+            <li>
+                <a href="action">Action</a>
+            </li>
+            <li>
+                <a href="comedy">Comedy</a>
+            </li>
+            <li>
+                <a href="family">Family</a>
+            </li>
+            <li>
+                <a href="fantasyr">Fantasy</a>
+            </li>
+            <li>
+                <a href="all">All</a>
+            </li>
+        </ul>
+        <media-carousel-component></media-carousel-component>
+    
+    <div class="container">               
 
         <div class="row"> <!-- 2-up for nav and media info -->
-            <nav class="col-12 col-sm-3 side-nav">
+            <!-- <nav class="col-12 col-sm-3 side-nav">
                 <ul class="media-type">
                     <li v-for="media in mediaTypes" :data-type="media.description">
                         <span>
@@ -29,27 +60,11 @@ export default {
                         <span class="d-none d-md-block">{{ media.description }}</span>
                     </li>
                 </ul>
-            </nav>
+            </nav> -->
 
             <div class="col-12 col-sm-9 media-info">
                 <!-- genres for video -->
-                <ul class="media-genres">
-                    <li>
-                        <a href="action">Action</a>
-                    </li>
-                    <li>
-                        <a href="comedy">Comedy</a>
-                    </li>
-                    <li>
-                        <a href="family">Family</a>
-                    </li>
-                    <li>
-                        <a href="fantasyr">Fantasy</a>
-                    </li>
-                    <li>
-                        <a href="all">All</a>
-                    </li>
-                </ul>
+              
 
                 <div class="thumb-wrapper clearfix">
                     <img v-for="media in retrievedMedia" :src="'images/video/' + media.movies_cover" alt="media thumb" class="img-thumbnail rounded float-left media-thumb" @click="switchCurrentMedia(media)">
@@ -57,6 +72,8 @@ export default {
             </div>
         </div> <!-- end 2-up for media info -->
     </div>
+    </div>
+
     `,
 
     data() {

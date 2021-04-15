@@ -1,5 +1,6 @@
 	
-			<header class="header">
+			<header-component :current-user="currentUser" :is-admin="isAdmin"></header-component>
+			{{!-- <header class="header">
 				<img src="images/roku.svg" alt="Roku logo" width="90">
 				<nav >
 				<ul v-if="currentUser">
@@ -8,5 +9,5 @@
 					<li @click="logout"><i class="fas fa-power-off"></i></li>
 				</ul>
 				</nav>
-			</header>
+			</header> --}}
 	

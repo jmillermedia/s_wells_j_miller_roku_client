@@ -1,0 +1,18 @@
+.mediaPreview {
+    margin: 0 auto;
+    max-width: 1200px;
+    // background-color: $main-pink;
+    display: flex;
+    justify-content: space-between;
+    video {
+        height: 450px!important;
+        width: auto;
+        height: 100%;
+    }
+    .info-Wrap {
+        display: flex;
+        flex-direction: column;
+        padding-right: 50px;
+        justify-content: center;
+    }
+}

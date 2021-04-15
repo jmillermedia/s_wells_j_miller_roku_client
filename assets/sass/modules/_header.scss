@@ -24,7 +24,7 @@ body {
     margin: 0 auto;
     align-items: center;
     justify-content: space-between;
-    padding: 20px!important;
+    padding: 20px !important;
     height: 90px;
     .mainLogo img {
         max-width: 140px;
@@ -35,9 +35,30 @@ body {
 
 .navItems {
     display: flex;
+    justify-content: center;
+    align-items: center;
     a {
         text-decoration: none;
         color: #ffffff;
-        padding: 50px 30px;
+        padding: 0 50px;
+    }
+}
+
+#topNav {
+    display: flex;
+    justify-content: center;
+    .small-avatar-rounded {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+}
+
+.userControls {
+    display: flex;
+    align-items: center;
+    li {
+        padding: 0 20px;
+        cursor: pointer;
     }
 }

@@ -59,10 +59,18 @@ import AllUsers from './components/TheAllUsersComponent.js';
             authenticated: false,
             user: "",
             isAdmin: false,
-            currentUser: undefined
+            currentUser: JSON.parse(window.localStorage.getItem('cacheduser')) || undefined
+        },
+        watch: {
+            currentUser: (oldvalue, newvalue) => console.log(oldvalue, newvalue)
         },
 
         created: function() {
+            let cachedUser = window.localStorage.getItem('cacheduser');
+            if (cachedUser) {
+                this.cachedUser = true;
+                console.log(cachedUser)
+            }
             if (window.localStorage.getItem("creds")) {
                 this.authenticated = true;
                 this.user = JSON.parse(window.localStorage.getItem("creds")).name;
@@ -91,11 +99,13 @@ import AllUsers from './components/TheAllUsersComponent.js';
 
             authenticateuser(user) {
                 // debugger;
+                console.log('YEEEEEEEEEEEHAAAAW', user);
                 this.currentUser = user;
             }
         },
         components: {
-            'footer-component': FooterComponent
+            'footer-component': FooterComponent,
+            'header-component': HeaderComponent
         },
         router
     }).$mount('#app')

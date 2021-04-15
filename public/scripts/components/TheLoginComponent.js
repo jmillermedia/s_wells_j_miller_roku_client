@@ -7,19 +7,19 @@ export default {
                 <p class="text">Before revisiting your favourite movies, tv shows or music from yesteryear, please log in with a valid username and password.</p>
                
                 <form>
-                    <div class="form-row align-items-center">
+                    <div class="input">
                         <div>
                             <label class="sr-only" for="inlineFormInputName">Name</label>
                             <input v-model="input.username" type="text" class="form-control" id="inlineFormInputName" placeholder="username" required>
                         </div>
 
-                        <div class="col-md-3 my-1">
+                        <div class="input">
                             <label class="sr-only" for="inlineFormPassword">Name</label>
                             <input v-model="input.password" type="password" class="form-control" id="inlineFormPassword" placeholder="password" required>
                         </div>
 
                         <div >
-                            <button v-on:click.prevent="login()" type="submit" class="btn btn-primary">Login</button>
+                            <button v-on:click.prevent="login()" type="submit" class="btn">Login</button>
                         </div>
                     </div>
                 </form>
@@ -60,7 +60,7 @@ export default {
                             console.warn(`user doesn't exist or something else broke`)
                         } else {
                             data.user_name = this.input.username;
-                            this.$router.replace({ name: 'users' });
+                            this.$router.push('/users');
                         }
                     })
                     // .catch((err) = console.error(err));
