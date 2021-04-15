@@ -8,7 +8,7 @@ export default {
     template: `
     <header class="header">
 
-    <div class="mainLogo"><router-link to="/"><img src="/images/MainLogo.png"></router-link></div>
+    <div class="mainLogo"><router-link to="/home"><img src="/images/MainLogo.png"></router-link></div>
     <nav id="topNav">
         <ul class="navItems">           
             <li class="navItem"><router-link to="/movies">Movies</router-link></li>

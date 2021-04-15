@@ -27,5 +27,9 @@
 }
 
 .user-container {
-    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 180px);
+    justify-content: center;
+    align-items: center;
 }

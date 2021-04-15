@@ -27,7 +27,7 @@ export default {
             
         </div>
         
-        <media-options-component></media-options-component>
+        <media-options-component :currentMediaType="currentMediaType"></media-options-component>
         <ul class="media-genres">
             <li>
                 <a href="action">Action</a>
@@ -45,7 +45,23 @@ export default {
                 <a href="all">All</a>
             </li>
         </ul>
-        <media-carousel-component></media-carousel-component>
+        <media-carousel-component 
+            v-if="currentMediaType === null || currentMediaType === 'movie'"
+            v-for="genre in movieGenres" 
+            :genre="genre" 
+            media-type="movie"></media-carousel-component>
+        <media-carousel-component 
+            v-if="currentMediaType === null || currentMediaType === 'television'"
+            v-for="genre in televisionGenres" 
+            :genre="genre" 
+            media-type="television"></media-carousel-component>
+        <media-carousel-component 
+            v-if="currentMediaType === null || currentMediaType === 'music'"
+            v-for="genre in musicGenres" 
+            :genre="genre" 
+            media-type="music"></media-carousel-component>
+        <!-- <media-carousel-component v-for="genre in genres" :genre="genre"></media-carousel-component>
+        <media-carousel-component v-for="genre in genres" :genre="genre"></media-carousel-component> -->
     
     <div class="container">               
 
@@ -89,15 +105,44 @@ export default {
             ],
 
             retrievedMedia: [],
+            genres: [],
+            movieGenres: [],
+            televisionGenres: [],
+
+            currentMediaType: null
         }
     },
 
     created: function() {
         this.loadMedia(null, 'movies');
+        this.getGenres();
         this.$emit('setuser', this.currentuser);
     },
 
     methods: {
+        selectMediaType(mediaType) {
+            this.currentMediaType = mediaType
+        },
+        getGenres() {
+            fetch('/api/genres/movie')
+                .then(res => res.json())
+                .then(data => {
+                    this.movieGenres = data
+                })
+                .catch((err) => console.error(err));
+            fetch('/api/genres/television')
+                .then(res => res.json())
+                .then(data => {
+                    this.televisionGenres = data
+                })
+                .catch((err) => console.error(err));
+            fetch('/api/genres/music')
+                .then(res => res.json())
+                .then(data => {
+                    this.musicGenres = data
+                })
+                .catch((err) => console.error(err));
+        },
         loadMedia(filter, mediaType) {
             // fetch data here
             let url = (filter == null) ? `/api/${mediaType}` : `/api/${mediaType}/${filter}`;
