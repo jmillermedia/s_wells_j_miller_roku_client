@@ -7,6 +7,7 @@ import FooterComponent from './components/FooterComponent.js';
 import LoginPage from './components/TheLoginComponent.js';
 import Protected from './components/TheProtectedComponent.js';
 import AllUsers from './components/TheAllUsersComponent.js';
+import MediaView from './components/MediaViewComponent.js'
 // import e from 'express';
 
 (() => {
@@ -34,7 +35,12 @@ import AllUsers from './components/TheAllUsersComponent.js';
             },
             { path: "/login", component: LoginPage },
             { path: "/users", name: 'users', component: AllUsers },
-            { path: '/home', name: 'home', component: HomeComponent, props: true }
+            { path: '/home', name: 'home', component: HomeComponent, props: true },
+            {
+                path: '/view/:mediaType/:id',
+                component: MediaView,
+                props: true
+            }
 
             //only access this route or section if you're logged in /authenticated
             // {

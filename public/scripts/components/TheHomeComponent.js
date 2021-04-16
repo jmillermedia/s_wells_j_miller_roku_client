@@ -108,6 +108,7 @@ export default {
             genres: [],
             movieGenres: [],
             televisionGenres: [],
+            musicGenres: [],
 
             currentMediaType: null
         }

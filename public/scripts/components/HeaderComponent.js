@@ -10,12 +10,12 @@ export default {
 
     <div class="mainLogo"><router-link to="/home"><img src="/images/MainLogo.png"></router-link></div>
     <nav id="topNav">
-        <ul class="navItems">           
+        <!-- <ul class="navItems">           
             <li class="navItem"><router-link to="/movies">Movies</router-link></li>
             <li class="navItem"><router-link to="/tv-shows">TV Shows</router-link></li>
             <li class="navItem"><router-link to="/music">Music</router-link></li>
 
-        </ul>
+        </ul> -->
         <ul class="userControls" v-if="currentUser">
             <li v-if="currentUser.user_avatar">
                 <img class="small-avatar-rounded" 
