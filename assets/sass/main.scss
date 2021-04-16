@@ -1,10 +1,13 @@
 @import 'modules/_moviethumb.scss';
+@import 'modules/global';
 // vars and mixins
 @import 'modules/vars.scss';
 @import 'modules/mixins.scss';
 // main modules
+@import 'modules/loginpage';
 @import 'modules/header';
 @import 'modules/login';
+@import 'modules/mediapreview';
 @import 'modules/heroarea';
 @import 'modules/_mediacarousel.scss';
 @import 'modules/footer';

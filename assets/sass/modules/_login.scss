@@ -18,6 +18,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
         .optionTitle {
             padding: 1rem;
             font-size: 1.5rem;
@@ -29,4 +34,9 @@
     font-family: $title-font;
     font-size: 60px;
     align-self: center;
+}
+
+.card {
+    @include purple-pink-gradient;
+    border-radius: 100% !important;
 }

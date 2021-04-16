@@ -3,15 +3,33 @@
 }
 
 .usersSection {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
     //margin: 2rem;
     .user {
-        padding: 50px;
+        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        .userTitle {
-            padding-top: 2rem;
-            font-size: 30px;
-        }
     }
+}
+
+.userTitle {
+    font-size: 30px;
+    font-family: $title-font !important;
+    text-align: center;
+}
+
+.user-message {
+    font-family: $title-font !important;
+    padding: 0;
+}
+
+.user-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 180px);
+    justify-content: center;
+    align-items: center;
 }

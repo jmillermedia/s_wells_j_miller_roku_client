@@ -1,4 +1,4 @@
-.mediaCarousel {
+.mediaCarousel .vueperslide__content-wrapper {
     display: flex;
     .mediaPiece {
         width: 400px;
@@ -11,4 +11,33 @@
             object-position: 50% 5%;
         }
     }
+}
+
+.media-genres {
+    display: flex;
+    a {
+        color: white;
+        padding: 20px;
+    }
+}
+
+.mediumTitle {
+    font-family: 'Glasoor';
+}
+
+.active {
+    h3 {
+        color: $accent-green;
+    }
+}
+
+.mediaList {
+    width: 80%;
+}
+
+.mediaPreview {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 180px);
 }

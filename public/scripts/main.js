@@ -7,6 +7,7 @@ import FooterComponent from './components/FooterComponent.js';
 import LoginPage from './components/TheLoginComponent.js';
 import Protected from './components/TheProtectedComponent.js';
 import AllUsers from './components/TheAllUsersComponent.js';
+import MediaView from './components/MediaViewComponent.js'
 // import e from 'express';
 
 (() => {
@@ -19,18 +20,27 @@ import AllUsers from './components/TheAllUsersComponent.js';
 
     // add our Vue Router here
     const router = new VueRouter({
-        routes: [
-            { path: "/", name: 'root', component: LoginPage, beforeEnter: (to, from, next) => {
-                //if you're authenticated (set in localstorage), then go to the home page.
-                if (localStorage.getItem('cacheduser')) {
-                    let user = JSON.parse(localStorage.getItem('cacheduser'));
-                } else {
-                    next();
+        routes: [{
+                path: "/",
+                name: 'root',
+                component: LoginPage,
+                beforeEnter: (to, from, next) => {
+                    //if you're authenticated (set in localstorage), then go to the home page.
+                    if (localStorage.getItem('cacheduser')) {
+                        let user = JSON.parse(localStorage.getItem('cacheduser'));
+                    } else {
+                        next();
+                    }
                 }
-            }},
+            },
             { path: "/login", component: LoginPage },
             { path: "/users", name: 'users', component: AllUsers },
-            { path: '/home', name: 'home', component: HomeComponent, props: true }
+            { path: '/home', name: 'home', component: HomeComponent, props: true },
+            {
+                path: '/view/:mediaType/:id',
+                component: MediaView,
+                props: true
+            }
 
             //only access this route or section if you're logged in /authenticated
             // {
@@ -55,10 +65,18 @@ import AllUsers from './components/TheAllUsersComponent.js';
             authenticated: false,
             user: "",
             isAdmin: false,
-            currentUser: undefined
+            currentUser: JSON.parse(window.localStorage.getItem('cacheduser')) || undefined
+        },
+        watch: {
+            currentUser: (oldvalue, newvalue) => console.log(oldvalue, newvalue)
         },
 
         created: function() {
+            let cachedUser = window.localStorage.getItem('cacheduser');
+            if (cachedUser) {
+                this.cachedUser = true;
+                console.log(cachedUser)
+            }
             if (window.localStorage.getItem("creds")) {
                 this.authenticated = true;
                 this.user = JSON.parse(window.localStorage.getItem("creds")).name;
@@ -87,11 +105,14 @@ import AllUsers from './components/TheAllUsersComponent.js';
 
             authenticateuser(user) {
                 // debugger;
+                console.log('YEEEEEEEEEEEHAAAAW', user);
                 this.currentUser = user;
             }
         },
-
-
+        components: {
+            'footer-component': FooterComponent,
+            'header-component': HeaderComponent
+        },
         router
     }).$mount('#app')
 })();

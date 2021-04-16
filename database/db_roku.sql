@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 11, 2021 at 12:14 AM
+-- Generation Time: Apr 14, 2021 at 03:30 PM
 -- Server version: 5.7.24
 -- PHP Version: 7.4.1
 
@@ -846,52 +846,85 @@ INSERT INTO `tbl_mov_director` (`mov_director_id`, `movies_id`, `director_id`) V
 --
 
 CREATE TABLE `tbl_mov_genre` (
-  `mov_genre_id` mediumint(8) UNSIGNED NOT NULL,
-  `movies_id` mediumint(9) NOT NULL,
-  `genre_id` mediumint(9) NOT NULL
+  `ID` int(11) NOT NULL,
+  `movie_ID` mediumint(9) NOT NULL,
+  `genre_ID` tinyint(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_mov_genre`
 --
 
-INSERT INTO `tbl_mov_genre` (`mov_genre_id`, `movies_id`, `genre_id`) VALUES
+INSERT INTO `tbl_mov_genre` (`ID`, `movie_ID`, `genre_ID`) VALUES
 (1, 1, 1),
 (2, 1, 2),
 (3, 1, 9),
-(4, 2, 1),
-(5, 2, 5),
-(6, 2, 6),
-(7, 2, 10),
-(8, 3, 1),
-(9, 3, 5),
-(10, 3, 9),
-(11, 4, 1),
-(12, 4, 2),
-(13, 4, 5),
-(14, 4, 9),
-(15, 5, 8),
-(16, 5, 13),
-(17, 5, 14),
-(18, 6, 5),
-(19, 6, 6),
-(20, 6, 10),
-(21, 7, 1),
-(22, 7, 2),
-(23, 7, 3),
-(24, 7, 15),
-(25, 8, 5),
-(26, 8, 9),
-(27, 9, 3),
-(28, 9, 5),
-(29, 9, 16),
-(30, 10, 14),
-(31, 10, 2),
-(32, 10, 3),
-(33, 10, 8),
-(34, 10, 13),
-(35, 11, 2),
-(36, 11, 5);
+(4, 1, 13),
+(5, 2, 1),
+(6, 2, 4),
+(7, 3, 1),
+(8, 3, 7),
+(9, 3, 9),
+(10, 4, 3),
+(11, 4, 13),
+(12, 5, 3),
+(13, 5, 13),
+(14, 6, 5),
+(15, 6, 13),
+(16, 7, 1),
+(17, 7, 5),
+(18, 7, 7),
+(19, 8, 3),
+(20, 8, 13),
+(21, 9, 6),
+(22, 9, 10),
+(23, 10, 1),
+(24, 10, 2),
+(25, 10, 9),
+(26, 11, 7),
+(27, 11, 5),
+(28, 12, 2),
+(29, 12, 12),
+(30, 12, 13),
+(31, 13, 8),
+(32, 13, 13),
+(33, 14, 1),
+(34, 14, 4),
+(35, 15, 1),
+(36, 15, 2),
+(39, 15, 9),
+(40, 16, 4),
+(41, 16, 5),
+(42, 16, 8),
+(43, 16, 13),
+(44, 17, 3),
+(45, 17, 5),
+(46, 17, 13),
+(47, 17, 15),
+(48, 18, 2),
+(49, 18, 13),
+(50, 18, 14),
+(51, 18, 8),
+(52, 19, 5),
+(53, 19, 13),
+(54, 19, 8),
+(55, 19, 15),
+(56, 20, 3),
+(57, 20, 5),
+(58, 20, 15),
+(59, 21, 12),
+(60, 21, 13),
+(61, 21, 8),
+(62, 21, 15),
+(63, 23, 12),
+(64, 23, 2),
+(65, 23, 13),
+(66, 24, 1),
+(67, 24, 2),
+(68, 24, 9),
+(69, 25, 3),
+(70, 25, 5),
+(71, 25, 14);
 
 -- --------------------------------------------------------
 
@@ -1022,6 +1055,93 @@ INSERT INTO `tbl_music` (`ID`, `music_cover`, `music_artist`, `music_title`, `mu
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_musicgenres`
+--
+
+CREATE TABLE `tbl_musicgenres` (
+  `ID` int(11) NOT NULL,
+  `genre_name` varchar(125) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_musicgenres`
+--
+
+INSERT INTO `tbl_musicgenres` (`ID`, `genre_name`) VALUES
+(1, 'Rock'),
+(2, 'Pop'),
+(3, 'Urban'),
+(4, 'Country'),
+(5, 'Dance'),
+(6, 'Jazz'),
+(7, 'Family');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_mus_genre`
+--
+
+CREATE TABLE `tbl_mus_genre` (
+  `ID` int(11) NOT NULL,
+  `music_ID` mediumint(9) NOT NULL,
+  `genre_ID` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_mus_genre`
+--
+
+INSERT INTO `tbl_mus_genre` (`ID`, `music_ID`, `genre_ID`) VALUES
+(1, 1, 1),
+(2, 2, 1),
+(3, 3, 1),
+(4, 4, 2),
+(5, 4, 5),
+(6, 4, 7),
+(7, 5, 2),
+(8, 5, 7),
+(9, 6, 1),
+(10, 6, 7),
+(11, 7, 1),
+(12, 8, 1),
+(13, 9, 2),
+(14, 9, 5),
+(15, 9, 7),
+(16, 10, 1),
+(17, 11, 1),
+(18, 12, 1),
+(19, 13, 2),
+(20, 13, 1),
+(21, 13, 7),
+(22, 14, 2),
+(23, 14, 5),
+(24, 14, 7),
+(25, 15, 1),
+(26, 15, 2),
+(27, 15, 7),
+(28, 16, 1),
+(29, 16, 2),
+(30, 16, 7),
+(31, 17, 1),
+(32, 17, 7),
+(33, 18, 1),
+(34, 19, 1),
+(35, 20, 1),
+(36, 20, 7),
+(37, 21, 6),
+(38, 21, 7),
+(39, 22, 6),
+(40, 23, 1),
+(41, 23, 7),
+(42, 24, 6),
+(43, 24, 7),
+(44, 25, 4),
+(45, 25, 7);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_studio`
 --
 
@@ -1106,6 +1226,89 @@ INSERT INTO `tbl_television` (`ID`, `television_cover`, `television_title`, `tel
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_tel_genre`
+--
+
+CREATE TABLE `tbl_tel_genre` (
+  `ID` int(11) NOT NULL,
+  `television_ID` mediumint(9) NOT NULL,
+  `genre_ID` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `tbl_tel_genre`
+--
+
+INSERT INTO `tbl_tel_genre` (`ID`, `television_ID`, `genre_ID`) VALUES
+(1, 1, 3),
+(2, 1, 13),
+(3, 2, 3),
+(4, 3, 3),
+(5, 3, 15),
+(6, 4, 3),
+(7, 4, 9),
+(8, 4, 13),
+(9, 5, 2),
+(10, 5, 12),
+(11, 5, 13),
+(12, 6, 1),
+(13, 6, 4),
+(14, 6, 5),
+(15, 7, 3),
+(16, 7, 13),
+(17, 8, 12),
+(18, 8, 3),
+(19, 8, 13),
+(20, 9, 3),
+(21, 9, 5),
+(22, 10, 3),
+(23, 10, 13),
+(24, 11, 1),
+(25, 11, 2),
+(26, 11, 9),
+(27, 12, 5),
+(28, 12, 15),
+(29, 13, 1),
+(30, 13, 13),
+(31, 13, 14),
+(32, 14, 1),
+(33, 14, 2),
+(34, 14, 5),
+(35, 15, 3),
+(36, 15, 13),
+(37, 15, 8),
+(38, 16, 1),
+(39, 16, 4),
+(40, 16, 13),
+(41, 17, 2),
+(42, 17, 3),
+(43, 17, 13),
+(44, 17, 9),
+(45, 18, 3),
+(46, 18, 7),
+(47, 18, 13),
+(48, 19, 1),
+(49, 19, 2),
+(50, 19, 9),
+(51, 20, 12),
+(52, 20, 13),
+(53, 20, 3),
+(54, 21, 3),
+(55, 21, 13),
+(56, 22, 11),
+(57, 22, 2),
+(58, 22, 4),
+(59, 23, 3),
+(60, 23, 7),
+(61, 24, 1),
+(62, 24, 13),
+(63, 24, 4),
+(64, 25, 4),
+(65, 25, 5);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_urating`
 --
 
@@ -1129,15 +1332,18 @@ CREATE TABLE `tbl_user` (
   `user_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `user_ip` varchar(50) NOT NULL DEFAULT 'no',
   `user_admin` tinyint(4) DEFAULT NULL,
-  `user_access` tinyint(4) DEFAULT NULL
+  `user_access` tinyint(4) DEFAULT NULL,
+  `user_avatar` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tbl_user`
 --
 
-INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_admin`, `user_access`) VALUES
-(1, 'trevor', 'user1', 'password', 't@t.com', '2019-02-01 19:07:35', '::1', 1, 5);
+INSERT INTO `tbl_user` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_date`, `user_ip`, `user_admin`, `user_access`, `user_avatar`) VALUES
+(1, 'trevor', 'user1', 'password', 't@t.com', '2019-02-01 19:07:35', '::1', 1, 5, 'count_olaf.jpg'),
+(2, 'Jess', 'user2', 'password', 'j@j.com', '2021-03-23 18:11:09', 'no', 3, 0, 'hermione.jpg'),
+(3, 'Jon', 'user3', 'password', 'jo@j.com', '2021-03-23 18:11:09', 'no', 0, 3, 'bob.jpg');
 
 --
 -- Indexes for dumped tables
@@ -1214,7 +1420,7 @@ ALTER TABLE `tbl_mov_director`
 -- Indexes for table `tbl_mov_genre`
 --
 ALTER TABLE `tbl_mov_genre`
-  ADD PRIMARY KEY (`mov_genre_id`);
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `tbl_mov_lang`
@@ -1235,6 +1441,18 @@ ALTER TABLE `tbl_music`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `tbl_musicgenres`
+--
+ALTER TABLE `tbl_musicgenres`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tbl_mus_genre`
+--
+ALTER TABLE `tbl_mus_genre`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `tbl_studio`
 --
 ALTER TABLE `tbl_studio`
@@ -1244,6 +1462,12 @@ ALTER TABLE `tbl_studio`
 -- Indexes for table `tbl_television`
 --
 ALTER TABLE `tbl_television`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `tbl_tel_genre`
+--
+ALTER TABLE `tbl_tel_genre`
   ADD PRIMARY KEY (`ID`);
 
 --
@@ -1308,7 +1532,7 @@ ALTER TABLE `tbl_language`
 -- AUTO_INCREMENT for table `tbl_movies`
 --
 ALTER TABLE `tbl_movies`
-  MODIFY `movies_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `movies_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `tbl_mov_cast`
@@ -1332,7 +1556,7 @@ ALTER TABLE `tbl_mov_director`
 -- AUTO_INCREMENT for table `tbl_mov_genre`
 --
 ALTER TABLE `tbl_mov_genre`
-  MODIFY `mov_genre_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `tbl_mov_lang`
@@ -1353,6 +1577,18 @@ ALTER TABLE `tbl_music`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT for table `tbl_musicgenres`
+--
+ALTER TABLE `tbl_musicgenres`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `tbl_mus_genre`
+--
+ALTER TABLE `tbl_mus_genre`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
 -- AUTO_INCREMENT for table `tbl_studio`
 --
 ALTER TABLE `tbl_studio`
@@ -1365,6 +1601,12 @@ ALTER TABLE `tbl_television`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
+-- AUTO_INCREMENT for table `tbl_tel_genre`
+--
+ALTER TABLE `tbl_tel_genre`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=66;
+
+--
 -- AUTO_INCREMENT for table `tbl_urating`
 --
 ALTER TABLE `tbl_urating`
@@ -1374,7 +1616,7 @@ ALTER TABLE `tbl_urating`
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` mediumint(8) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

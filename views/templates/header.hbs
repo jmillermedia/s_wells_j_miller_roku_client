@@ -1,16 +1,13 @@
-	<div class="container-fluid">
-		<div class="row">
-			<header class="col-sm-12 fixed-top">
-				<img src="images/roku.svg" alt="Roku logo" width="90"><span>FlashBack</span>
-				<nav class="float-right">
+	
+			<header-component :current-user="currentUser" :is-admin="isAdmin"></header-component>
+			{{!-- <header class="header">
+				<img src="images/roku.svg" alt="Roku logo" width="90">
+				<nav >
 				<ul v-if="currentUser">
 					<li v-if="currentUser.user_avatar"><img class="small-avatar-rounded" :src='"images/" + currentUser.user_avatar' alt="User Avatar"></li>
 					<li v-if="isAdmin"><i class="fas fa-cog"></i></li>
 					<li @click="logout"><i class="fas fa-power-off"></i></li>
 				</ul>
 				</nav>
-			</header>
-		</div>
-
-		</div>
-	</div> <!-- end container fluid -->
+			</header> --}}
+	
