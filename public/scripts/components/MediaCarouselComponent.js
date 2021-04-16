@@ -85,9 +85,11 @@ export default {
         <h2 class="mediumTitle">{{genre.genre_name}}</h2>
         <vueper-slides
             class="no-shadow"
+            :bullets="false"
+            :progress="false"
             :visible-slides="4"
             :slide-ratio="1 / 4"
-            :dragging-distance="70">
+            :dragging-distance="300">
             <vueper-slide v-for="item in media" :key="item.ID" :image='"./images/" + item.cover' @click.native="handleMediaView(item)" />
         </vueper-slides>
         <ul class="mediaCarousel">

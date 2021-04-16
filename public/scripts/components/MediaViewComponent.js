@@ -127,7 +127,8 @@ export default {
                 <video
                     v-if="$route.params.mediaType === 'television'" 
                     autoplay controls muted :src="'video/' + media.television_trailer" class="fs-video"></video>
-                <audio
+                <audio controls
+                    :src="'images/'+ media.music_track"
                     v-if="$route.params.mediaType === 'music'" 
                 ></audio>
 

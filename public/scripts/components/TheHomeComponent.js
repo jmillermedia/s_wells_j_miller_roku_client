@@ -28,7 +28,7 @@ export default {
         </div>
         
         <media-options-component :currentMediaType="currentMediaType"></media-options-component>
-        <ul class="media-genres">
+        <!-- <ul class="media-genres">
             <li>
                 <a href="action">Action</a>
             </li>
@@ -44,7 +44,7 @@ export default {
             <li>
                 <a href="all">All</a>
             </li>
-        </ul>
+        </ul> -->
         <media-carousel-component 
             v-if="currentMediaType === null || currentMediaType === 'movie'"
             v-for="genre in movieGenres" 
@@ -63,31 +63,7 @@ export default {
         <!-- <media-carousel-component v-for="genre in genres" :genre="genre"></media-carousel-component>
         <media-carousel-component v-for="genre in genres" :genre="genre"></media-carousel-component> -->
     
-    <div class="container">               
-
-        <div class="row"> <!-- 2-up for nav and media info -->
-            <!-- <nav class="col-12 col-sm-3 side-nav">
-                <ul class="media-type">
-                    <li v-for="media in mediaTypes" :data-type="media.description">
-                        <span>
-                            <i v-bind:class="[media.iconClass]"></i>
-                        </span>
-
-                        <span class="d-none d-md-block">{{ media.description }}</span>
-                    </li>
-                </ul>
-            </nav> -->
-
-            <div class="col-12 col-sm-9 media-info">
-                <!-- genres for video -->
-              
-
-                <div class="thumb-wrapper clearfix">
-                    <img v-for="media in retrievedMedia" :src="'images/video/' + media.movies_cover" alt="media thumb" class="img-thumbnail rounded float-left media-thumb" @click="switchCurrentMedia(media)">
-                </div>
-            </div>
-        </div> <!-- end 2-up for media info -->
-    </div>
+   
     </div>
 
     `,
